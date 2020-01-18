@@ -22,10 +22,11 @@ gulp.task('replace', function () {
 });
 
 gulp.task('copy', function () {
-    var target = gulp.src('./index.js');
+    var target = gulp.src(['./index.js', './index.d.ts']);
 
     return target
         .pipe(gulp.dest('./lib'))
 });
+
 
 gulp.task('default', gulp.parallel('replace', 'copy'));
