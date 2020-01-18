@@ -2,14 +2,20 @@
   "name": "if-mailers",
   "version": "1.4.0",
   "description": "reusable mailers",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "index.js",
+    "lib/",
+    "types/index.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manishsingh10895/if-mailers.git"
   },
+  "types": "./types/index.d.ts",
   "keywords": [
     "mailers"
   ],

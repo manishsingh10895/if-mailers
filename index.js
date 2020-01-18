@@ -4,7 +4,6 @@ const APP = 'BetaFunds';
 const ADDRESS = 'Uphold, Inc. All rights reserved. Suite A, 6 Honduras Street | London, England, EC1Y 0TH Uphold HQ Inc. NMLS ID No. 1269875';
 
 class Stringer {
-
     static replaceBaseVariables(html) {
         html = html.replace(/<%app%>/, APP);
         html = html.replace(/<%address%>/, ADDRESS);
@@ -21,7 +20,7 @@ class Stringer {
     }
 
     static getEmailConfirmation(firstName, link) {
-        let html = fs.readFileSync(__dirname + '/email-confirmation.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/email-confirmation.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, link });
         html = Stringer.replaceBaseVariables(html);
@@ -31,7 +30,7 @@ class Stringer {
     }
 
     static getForgotPassword(firstName, link) {
-        let html = fs.readFileSync(__dirname + '/forgot-password.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/forgot-password.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, link });
 
@@ -42,7 +41,7 @@ class Stringer {
     }
 
     static getDeposit(firstName, symbol, fullName, amount) {
-        let html = fs.readFileSync(__dirname + '/deposit.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/deposit.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
 
@@ -53,7 +52,7 @@ class Stringer {
     }
 
     static getWelcome(firstName, link) {
-        let html = fs.readFileSync(__dirname + '/welcome.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/welcome.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, link });
 
@@ -63,7 +62,7 @@ class Stringer {
     }
 
     static getWithdrawalProcessed(firstName, symbol, fullName, amount) {
-        let html = fs.readFileSync(__dirname + '/withdrawal-processed.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/withdrawal-processed.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
 
@@ -74,7 +73,7 @@ class Stringer {
     }
 
     static getWithdrawalRequest(firstName, symbol, fullName, amount, link) {
-        let html = fs.readFileSync(__dirname + '/withdrawal-request.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/withdrawal-request.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount, link });
 
@@ -84,7 +83,7 @@ class Stringer {
     }
 
     static getPackageBuy(firstName, packageName, amount) {
-        let html = fs.readFileSync(__dirname + '/package-buy.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, packageName, amount });
 
@@ -93,5 +92,7 @@ class Stringer {
         return html;
     }
 }
+
+
 
 module.exports = Stringer;

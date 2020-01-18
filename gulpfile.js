@@ -4,7 +4,7 @@ var inject = require('gulp-inject');
 var replace = require('gulp-replace');
 
 gulp.task('replace', function () {
-    var target = gulp.src(['./*.html']);
+    var target = gulp.src(['./html/*.html']);
 
     var sources = gulp.src(['./*.css'])
 
@@ -15,18 +15,10 @@ gulp.task('replace', function () {
             return '<style>\n' + style + '\n</style>';
         }))
         .pipe(replace(/<!-- inject:footer -->/, (s, filename) => {
-            var html = fs.readFileSync(__dirname + '/footer.html', 'utf8');
+            var html = fs.readFileSync(__dirname + '/html/footer.html', 'utf8');
             return html;
         }))
         .pipe(gulp.dest('./lib'))
 });
 
-gulp.task('copy', function () {
-    var target = gulp.src(['./index.js', './index.d.ts']);
-
-    return target
-        .pipe(gulp.dest('./lib'))
-});
-
-
-gulp.task('default', gulp.parallel('replace', 'copy'));
+gulp.task('default', gulp.parallel('replace'));
