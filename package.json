@@ -1,0 +1,22 @@
+{
+  "name": "if-mailers",
+  "version": "1.0.0",
+  "description": "reusable mailers ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manishsingh10895/if-mailers.git"
+  },
+  "keywords": [
+    "mailers"
+  ],
+  "author": "manishsingh10895",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manishsingh10895/if-mailers/issues"
+  },
+  "homepage": "https://github.com/manishsingh10895/if-mailers#readme"
+}
