@@ -13,7 +13,7 @@ class Stringer {
 
     static multiReplacement(html, keyvalue) {
         for (var key in keyvalue) {
-            html = html.replace(new RegExp(`<%${key}%>`, 'g'))
+            html = html.replace(new RegExp(`<%${key}%>`, 'g'), keyvalue[key])
         }
 
         return html;
@@ -90,6 +90,9 @@ class Stringer {
     }
 }
 
+let html = Stringer.getDeposit('Manish', 'BTC', 'Bitcoin', '10');
+
+console.log(html);
 
 
 module.exports = Stringer;
