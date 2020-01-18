@@ -29,13 +29,10 @@ class Stringer {
         return html;
     }
 
-    static getForgotPassword(firstName, link) {
+    static getForgotPassword(firstName, code) {
         let html = fs.readFileSync(__dirname + '/lib' + '/forgot-password.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, link });
-
-        html = Stringer.multiReplacement(html, { firstName, link });
-
+        html = Stringer.multiReplacement(html, { firstName, code });
 
         return html;
     }

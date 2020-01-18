@@ -11,10 +11,12 @@ class Stringer {
     static getEmailConfirmation(firstName: string, link: string): string;
     /**
      * 
+     * Returns reset password mail
+     * 
      * @param firstName user name
-     * @param link link to take user to reset password screen
+     * @param code code for the  user to reset password screen
      */
-    static getForgotPassword(firstName: string, link: string): string;
+    static getForgotPassword(firstName: string, code: string): string;
     /**
      * @param firstName name of user
      * @param symbol symbol for the token

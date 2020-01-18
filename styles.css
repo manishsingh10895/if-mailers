@@ -19,6 +19,11 @@ body {
   margin: auto;
 }
 
+.if-highlight-text {
+  font-size: 28px;
+  color: #5ac8fa;
+}
+
 .if-btn {
   padding: 10px 25px;
   text-decoration: none;
