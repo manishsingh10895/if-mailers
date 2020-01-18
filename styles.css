@@ -1,0 +1,57 @@
+p,
+h1,
+h2,
+h3,
+div {
+  font-family: "Muli", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.mail-context-image img {
+  height: 70px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.if-btn {
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #5ac8fa;
+  color: white;
+}
+
+.if-link {
+  color: #5ac8fa;
+}
+
+.huge-gap {
+  padding: 32px 0;
+}
+
+.footer-container {
+  margin-top: 64px;
+  background-color: #f4f7fb;
+}
+
+.footer-inner {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  height: 38px;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

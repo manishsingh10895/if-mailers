@@ -1,8 +1,8 @@
 {
   "name": "if-mailers",
   "version": "1.0.0",
-  "description": "reusable mailers ",
-  "main": "index.js",
+  "description": "reusable mailers",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/manishsingh10895/if-mailers/issues"
   },
-  "homepage": "https://github.com/manishsingh10895/if-mailers#readme"
+  "homepage": "https://github.com/manishsingh10895/if-mailers#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inject": "^5.0.5",
+    "gulp-replace": "^1.0.0"
+  }
 }

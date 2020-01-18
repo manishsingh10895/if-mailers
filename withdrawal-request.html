@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Deposit</title>
+    <title>Withdraw Request</title>
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-
     <!-- inject:css -->
 </head>
 
@@ -18,18 +17,24 @@
                 src="https://raw.githubusercontent.com/atomiclabs/cryptocurrency-icons/master/svg/color/<%symbol%>.svg">
         </div>
 
-        <h1><%fullName%> deposit dredited</h1>
-
+        <h1>Confirm <%fullName%> withdrawal</h1>
+        <h4>- <%amount%> <%symbol%></h4>
         <p>
             <h3>Hello <%firstName%></h3>
         </p>
         <p>
-            The deposit of <%amount%> <%symbol%> has been credited to your Wallet.
+            A request to make a withdrawal from your <%app%> account has been made. Please click on the confirmation
+            button below to confirm the withdrawal request.
         </p>
 
         <div class="huge-gap">
-            <a class="if-btn" href="<%link%>">Go to <%app%></a>
+            <a class="if-btn" href="<%link%>">Confirm Withdrawal</a>
         </div>
+
+        <p>
+            If you did not make this request, please change your password, or contact our support team
+        </p>
+
     </div>
 
     <!-- inject:footer -->

@@ -12,46 +12,86 @@ class Stringer {
         return html;
     }
 
+    static multiReplacement(html, keyvalue) {
+        for (var key in keyvalue) {
+            html = html.replace(new RegExp(`<%${key}%>`, 'g'))
+        }
+
+        return html;
+    }
+
     static getEmailConfirmation(firstName, link) {
         let html = fs.readFileSync(__dirname + '/email-confirmation.html').toString('utf-8');
 
-        html = html.replace(/<%firstName%>/g, firstName);
-        html = html.replace(/<%link%>/g, link);
-
+        html = Stringer.multiReplacement(html, { firstName, link });
         html = Stringer.replaceBaseVariables(html);
 
-        console.log(html);
+
         return html;
     }
 
     static getForgotPassword(firstName, link) {
         let html = fs.readFileSync(__dirname + '/forgot-password.html').toString('utf-8');
 
-        html = html.replace(/<%firstName%>/g, firstName);
-        html = html.replace(/<%link%>/g, link);
+        html = Stringer.multiReplacement(html, { firstName, link });
 
-        html = Stringer.replaceBaseVariables(html);
+        html = Stringer.multiReplacement(html, { firstName, link });
 
-        console.log(html);
+
         return html;
     }
 
     static getDeposit(firstName, symbol, fullName, amount) {
         let html = fs.readFileSync(__dirname + '/deposit.html').toString('utf-8');
 
-        html = html.replace(/<%firstName%>/g, firstName);
-        html = html.replace(/<%symbol%>/g, symbol);
-        html = html.replace(/<%fullName%>/g, fullName);
-        html = html.replace(/<%amount%>/g, amount);
+        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
 
         html = Stringer.replaceBaseVariables(html);
 
-        console.log(html);
+
         return html;
     }
-    
-}
 
-Stringer.getEmailConfirmation('Manish', 'link')
+    static getWelcome(firstName, link) {
+        let html = fs.readFileSync(__dirname + '/welcome.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, link });
+
+        html = Stringer.replaceBaseVariables(html);
+
+        return html;
+    }
+
+    static getWithdrawalProcessed(firstName, symbol, fullName, amount) {
+        let html = fs.readFileSync(__dirname + '/withdrawal-processed.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
+
+        html = Stringer.replaceBaseVariables(html);
+
+
+        return html;
+    }
+
+    static getWithdrawalRequest(firstName, symbol, fullName, amount, link) {
+        let html = fs.readFileSync(__dirname + '/withdrawal-request.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount, link });
+
+        html = Stringer.replaceBaseVariables(html);
+
+        return html;
+    }
+
+    static getPackageBuy(firstName, packageName, amount) {
+        let html = fs.readFileSync(__dirname + '/package-buy.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, packageName, amount });
+
+        html = Stringer.replaceBaseVariables(html);
+
+        return html;
+    }
+}
 
 module.exports = Stringer;
