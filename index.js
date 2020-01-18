@@ -61,7 +61,7 @@ class Stringer {
     static getWithdrawalProcessed(firstName, symbol, fullName, amount) {
         let html = fs.readFileSync(__dirname + '/lib' + '/withdrawal-processed.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
 
         html = Stringer.replaceBaseVariables(html);
 
@@ -72,7 +72,7 @@ class Stringer {
     static getWithdrawalRequest(firstName, symbol, fullName, amount, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/withdrawal-request.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount, link });
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount, link });
 
         html = Stringer.replaceBaseVariables(html);
 
