@@ -40,7 +40,7 @@ class Stringer {
     static getDeposit(firstName, symbol, fullName, amount) {
         let html = fs.readFileSync(__dirname + '/lib' + '/deposit.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, fullName, amount });
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
 
         html = Stringer.replaceBaseVariables(html);
 
@@ -89,10 +89,5 @@ class Stringer {
         return html;
     }
 }
-
-let html = Stringer.getDeposit('Manish', 'BTC', 'Bitcoin', '10');
-
-console.log(html);
-
 
 module.exports = Stringer;
