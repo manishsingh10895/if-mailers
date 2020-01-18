@@ -11,7 +11,7 @@ class Stringer {
     }
 
     static getEmailConfirmation(firstName, link) {
-        let html = fs.readFileSync('email-confirmation.html').toString('utf-8');
+        let html = fs.readFileSync(__dirname + 'email-confirmation.html').toString('utf-8');
 
         html = html.replace(/<%firstName%>/g, firstName);
         html = html.replace(/<%link%>/g, link);
