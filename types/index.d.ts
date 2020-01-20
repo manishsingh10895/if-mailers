@@ -1,8 +1,6 @@
 // TypeScript Version: 3.0
 
-/// <reference types="node" />
-
-class Stringer {
+declare class Stringer {
     /**
      * 
      * @param firstName user name
