@@ -71,6 +71,16 @@ body {
   align-items: center;
 }
 
+.social-icons{
+  width: 100%;
+  float: right;
+}
+
+.left-side{
+  float: left;
+  width:100%;
+}
+
 </style>
 </head>
 
@@ -79,7 +89,7 @@ body {
         <div class="mail-context-image">
             <img height="70px" width="70px"
             alt="Coin" title="Coin"
-                src="https://raw.githubusercontent.com/atomiclabs/cryptocurrency-icons/master/128/color/<%symbollc%>.png">
+                src="https://betafunds.s3.ap-south-1.amazonaws.com/cryptoicons-128-color/<%symbollc%>.png">
         </div>
 
         <h1><%fullName%> deposit credited</h1>
@@ -99,17 +109,23 @@ body {
     <footer class="footer-container">
     <div class="footer-inner">
         <div class="logo-row">
-            <div>
-                <img height="38px" width="100px" alt="Logo" title="Logo" style="display: block;" class="footer-logo"
-                    src="https://firebasestorage.googleapis.com/v0/b/todoist-166bf.appspot.com/o/logo.svg?alt=media&token=aa7b4485-2932-464b-b9fc-61e455235a6a">
+            <div class="left-side">
+                <img alt="Logo" title="Logo" style="display: block;" class="footer-logo"
+                    src="https://betafunds.s3.ap-south-1.amazonaws.com/logo-fulltext-transparent.png">
+                <p style="max-width:250px;font-size: 13px; color: #5F748B;">
+                 © 2019 <%address%>
+                </p>
             </div>
-
-            <div class="social-icons">Social</div>
+            <div class="huge-gap"></div>
+            <div class="social-icons">
+            <p style="font-size: 13px; color: #5F748B;margin-top: 0">Follow us on </p>
+            <a href="<%link-facebook%>"><img style="width:20px" src="https://betafunds.s3.ap-south-1.amazonaws.com/Facebook.png"></a>
+            <a href="<%link-twitter%>"><img style="width:20px" src="https://betafunds.s3.ap-south-1.amazonaws.com/Twitter.png"></a>
+            <a href="<%link-telegram%>"><img style="width:20px" src="https://betafunds.s3.ap-south-1.amazonaws.com/Telegram.png"></a>
+            <a href="<%link-reddit%>"><img style="width:20px" src="https://betafunds.s3.ap-south-1.amazonaws.com/Reddit.png"></a>
+            </div>
         </div>
 
-        <p style="font-size: 13px; color: #5F748B;">
-            © 2019 <%address%>
-        </p>
     </div>
 </footer>
 </body>

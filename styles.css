@@ -29,7 +29,7 @@ body {
   text-decoration: none;
   border-radius: 8px;
   background-color: #5ac8fa;
-  color: white;
+  color: #fff;
 }
 
 .if-link {
@@ -59,4 +59,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.social-icons{
+  width: 100%;
+  float: right;
+}
+
+.left-side{
+  float: left;
+  width:100%;
 }
