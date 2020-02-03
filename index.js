@@ -33,6 +33,7 @@ class Stringer {
         let html = fs.readFileSync(__dirname + '/lib' + '/forgot-password.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, code });
+        html = Stringer.replaceBaseVariables(html);
 
         return html;
     }
