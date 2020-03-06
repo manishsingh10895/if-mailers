@@ -45,6 +45,14 @@ declare class Stringer {
      * @param link link to take the user to show request
      */
     static getWithdrawalRequest(firstName: string, symbol: string, fullName: string, amount: string, link: string): string;
+
+    /**
+     * 
+     * @param firstName firstname of the user
+     * @param packageName package bought
+     * @param amount amount of package 
+     */
+    static getPackageBuy(firstName: string, packageName: string, amount: string): string;
 }
 
 export = Stringer
