@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const APP = 'BetaFunds';
-const ADDRESS = 'Uphold, Inc. All rights reserved. Suite A, 6 Honduras Street | London, England, EC1Y 0TH Uphold HQ Inc. NMLS ID No. 1269875';
+const ADDRESS = 'Betafunds,\n Cayman Islands';
 
 const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
 const TWITTER = 'https://twitter.com/BetaFunds';
@@ -12,6 +12,8 @@ class Stringer {
     static replaceBaseVariables(html) {
         html = html.replace(/<%app%>/, APP);
         html = html.replace(/<%address%>/, ADDRESS);
+
+        html = this.setFooterLinks(html);
 
         return html;
     }
@@ -43,7 +45,7 @@ class Stringer {
         return html;
     }
 
-    static getForgotPassword(firstName, code) {
+    static getForgotPassword(firstName, code, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/forgot-password.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, code });
@@ -52,10 +54,10 @@ class Stringer {
         return html;
     }
 
-    static getDeposit(firstName, symbol, fullName, amount) {
+    static getDeposit(firstName, symbol, fullName, amount, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/deposit.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount, link });
 
         html = Stringer.replaceBaseVariables(html);
 
@@ -73,10 +75,10 @@ class Stringer {
         return html;
     }
 
-    static getWithdrawalProcessed(firstName, symbol, fullName, amount) {
+    static getWithdrawalProcessed(firstName, symbol, fullName, amount, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/withdrawal-processed.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount, link });
 
         html = Stringer.replaceBaseVariables(html);
 
@@ -84,10 +86,10 @@ class Stringer {
         return html;
     }
 
-    static getPackageBuy(packageName, firstName, amount) {
+    static getPackageBuy(packageName, firstName, amount, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
+        html = Stringer.multiReplacement(html, { firstName, packageName, amount, link });
 
         html = Stringer.replaceBaseVariables(html);
 
@@ -104,15 +106,17 @@ class Stringer {
         return html;
     }
 
-    static getPackageBuy(firstName, packageName, amount) {
+    static getPackageBuy(firstName, packageName, amount, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
 
-        html = Stringer.multiReplacement(html, { firstName, packageName, amount });
+        html = Stringer.multiReplacement(html, { firstName, packageName, amount, link });
 
         html = Stringer.replaceBaseVariables(html);
 
         return html;
     }
 }
+
+console.log(Stringer.getPackageBuy('Randua', 'Manishj', '123', 'https://localhost:2303'));
 
 module.exports = Stringer;
