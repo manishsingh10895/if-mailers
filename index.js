@@ -7,6 +7,8 @@ const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
 const TWITTER = 'https://twitter.com/BetaFunds';
 const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
 const INSTA = 'https://www.instagram.com/betafunds_/';
+const TEL = '';
+const REDDIT = '';
 
 class Stringer {
     static replaceBaseVariables(html) {
@@ -31,7 +33,9 @@ class Stringer {
             'link-facebook': FACEBOOK,
             'link-twitter': TWITTER,
             'link-insta': INSTA,
-            'link-youtube': YT
+            'link-youtube': YT,
+            'link-telegram': TEL,
+            'link-reddit': REDDIT
         })
     }
 
@@ -82,16 +86,6 @@ class Stringer {
 
         html = Stringer.replaceBaseVariables(html);
 
-
-        return html;
-    }
-
-    static getPackageBuy(packageName, firstName, amount, link) {
-        let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
-
-        html = Stringer.multiReplacement(html, { firstName, packageName, amount, link });
-
-        html = Stringer.replaceBaseVariables(html);
 
         return html;
     }

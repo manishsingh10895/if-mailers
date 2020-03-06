@@ -20,8 +20,9 @@ declare class Stringer {
      * @param symbol symbol for the token
      * @param fullName fullname of token    
      * @param amount amount of request  
+     * @param link link for the app
      */
-    static getDeposit(firstName: string, symbol: string, fullName: string, amount: string): string;
+    static getDeposit(firstName: string, symbol: string, fullName: string, amount: string, link: string): string;
     /**
      * Welcome mail string
      * @param firstName user name   
@@ -34,8 +35,9 @@ declare class Stringer {
      * @param symbol symbol for the token
      * @param fullName fullname of token    
      * @param amount amount of request  
+     * @param link link for app
      */
-    static getWithdrawalProcessed(firstName: string, symbol: string, fullName: string, amount: string);
+    static getWithdrawalProcessed(firstName: string, symbol: string, fullName: string, amount: string, link: string);
     /**
      * 
      * @param firstName name of user
@@ -43,7 +45,7 @@ declare class Stringer {
      * @param fullName fullname of token    
      * @param amount amount of request  
      * @param link link to take the user to show request
-     */
+    */
     static getWithdrawalRequest(firstName: string, symbol: string, fullName: string, amount: string, link: string): string;
 
     /**
@@ -51,8 +53,9 @@ declare class Stringer {
      * @param firstName firstname of the user
      * @param packageName package bought
      * @param amount amount of package 
+     * @param link link for app
      */
-    static getPackageBuy(firstName: string, packageName: string, amount: string): string;
+    static getPackageBuy(firstName: string, packageName: string, amount: string, link: string): string;
 }
 
 export = Stringer
