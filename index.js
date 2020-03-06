@@ -3,6 +3,11 @@ const fs = require('fs')
 const APP = 'BetaFunds';
 const ADDRESS = 'Uphold, Inc. All rights reserved. Suite A, 6 Honduras Street | London, England, EC1Y 0TH Uphold HQ Inc. NMLS ID No. 1269875';
 
+const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
+const TWITTER = 'https://twitter.com/BetaFunds';
+const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
+const INSTA = 'https://www.instagram.com/betafunds_/';
+
 class Stringer {
     static replaceBaseVariables(html) {
         html = html.replace(/<%app%>/, APP);
@@ -17,6 +22,15 @@ class Stringer {
         }
 
         return html;
+    }
+
+    static setFooterLinks(html) {
+        return Stringer.multiReplacement(html, {
+            'link-facebook': FACEBOOK,
+            'link-twitter': TWITTER,
+            'link-insta': INSTA,
+            'link-youtube': YT
+        })
     }
 
     static getEmailConfirmation(firstName, link) {
@@ -66,6 +80,16 @@ class Stringer {
 
         html = Stringer.replaceBaseVariables(html);
 
+
+        return html;
+    }
+
+    static getPackageBuy(packageName, firstName, amount) {
+        let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, symbol, symbollc: symbol.toLowerCase(), fullName, amount });
+
+        html = Stringer.replaceBaseVariables(html);
 
         return html;
     }
