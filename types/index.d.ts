@@ -1,9 +1,9 @@
 // TypeScript Version: 3.0
 
 declare type MailOptions = {
-    appName: string,
-    address: string,
-    social: {
+    appName?: string,
+    address?: string,
+    social?: {
         facebook?: string,
         twitter?: string,
         youtube?: string,
@@ -25,14 +25,14 @@ declare class Mailer {
      * @param firstName user name
      * @param link link to confirm
      */
-    static getEmailConfirmation(firstName: string): string;
+    getEmailConfirmation(firstName: string): string;
 
     /**
      * Welcome mail string
      * @param firstName user name   
      * 
      */
-    static getWelcome(firstName: string): string;
+    getWelcome(firstName: string): string;
 
     /**
      * 
@@ -41,7 +41,7 @@ declare class Mailer {
      * @param firstName user name
      * @param code code for the  user to reset password screen
      */
-    static getForgotPassword(firstName: string, code: string): string;
+    getForgotPassword(firstName: string, code: string): string;
 }
 
 declare class Stringer {
