@@ -1,5 +1,49 @@
 // TypeScript Version: 3.0
 
+declare type MailOptions = {
+    appName: string,
+    address: string,
+    social: {
+        facebook?: string,
+        twitter?: string,
+        youtube?: string,
+        insta?: string,
+    }
+}
+
+declare class Mailer {
+    options: MailOptions;
+
+    /**
+     * Sets 
+     * @param options mail options
+     */
+    setOptions(options: MailOptions): void;
+
+    /**
+     * 
+     * @param firstName user name
+     * @param link link to confirm
+     */
+    static getEmailConfirmation(firstName: string): string;
+
+    /**
+     * Welcome mail string
+     * @param firstName user name   
+     * 
+     */
+    static getWelcome(firstName: string): string;
+
+    /**
+     * 
+     * Returns reset password mail
+     * 
+     * @param firstName user name
+     * @param code code for the  user to reset password screen
+     */
+    static getForgotPassword(firstName: string, code: string): string;
+}
+
 declare class Stringer {
     /**
      * 
@@ -58,4 +102,4 @@ declare class Stringer {
     static getPackageBuy(firstName: string, packageName: string, amount: string, link: string): string;
 }
 
-export = Stringer
+export = { Stringer, Mailer }

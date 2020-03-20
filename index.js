@@ -9,6 +9,85 @@ const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
 const INSTA = 'https://www.instagram.com/betafunds_/';
 const TEL = '';
 const REDDIT = '';
+const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/mail-icon-default.png';
+const APP_LINK = 'https://betafunds.com';
+
+
+class Mailer {
+    options = {
+        appName: APP,
+        address: ADDRESS,
+        social: {
+            facebook: FACEBOOK,
+            twitter: TWITTER,
+            youtube: YT,
+            insta: INSTA,
+        },
+        appLink: APP_LINK
+    }
+
+    constructor(options) {
+        if (options)
+            this.options = {
+                ...this.options,
+                social: {
+                    ...this.options.social,
+                    ...options.social
+                },
+                ...options
+            }
+    }
+
+    /**
+     * Sets options 
+     * @param {*} options 
+     */
+    setOptions(options) {
+        this.options = {
+            ...this.options,
+            social: {
+                ...this.options.social,
+                ...options.social
+            },
+            ...options
+        }
+    }
+
+    _readEmailFile(fileName) {
+        let html = fs.readFileSync(__dirname + '/lib' + `/${fileName}.html`).toString('utf-8');
+
+        return html;
+    }
+
+    replaceBaseVariables(html) {
+
+    }
+
+    getEmailConfirmation(firstName) {
+        let html = this._readEmailFile('email-confirmation');
+
+        html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+
+        return html;
+    }
+
+    getWelcome(firstName) {
+        let html = this._readEmailFile('welcome');
+
+        html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+
+        return html;
+    }
+
+    getForgotPassword(firstName, code) {
+        let html = this._readEmailFile('forgot-password');
+
+        html = Stringer.multiReplacement(html, { firstName, code });
+        html = Stringer.replaceBaseVariables(html);
+
+        return html;
+    }
+}
 
 class Stringer {
     static replaceBaseVariables(html) {
@@ -111,6 +190,7 @@ class Stringer {
     }
 }
 
-console.log(Stringer.getPackageBuy('Randua', 'Manishj', '123', 'https://localhost:2303'));
+exports.Stringer = Stringer;
+exports.Mailer = Mailer;
 
-module.exports = Stringer;
+
