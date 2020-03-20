@@ -16,15 +16,17 @@
 > `const Stringer = require('if-mailers').Stringer`;
 
 ### ES6
-> `import {Mailer} from 'if-mailers'`;
+> `import IFMailers from 'if-mailers'`;
+> `const Mailer = IFMailers.Mailer`;     
+
 
 #### or
 
-> `import {Stringer} from 'if-mailers'`;
-
+> `import IFMailers from 'if-mailers'`;
+> `const Stringer = IFMailers.Stringer`;     
 
 ## Mailer class
-    It gives the options of custimizing certain variable apart from the ones passes as parameter (recommended)
+    It gives the options of custimizing certain variables apart from the ones passed as parameter (recommended)
 
 ## Striger class
     It returns html string based on only the provided parameter
