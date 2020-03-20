@@ -190,7 +190,7 @@ class Stringer {
     }
 }
 
-exports.Stringer = Stringer;
-exports.Mailer = Mailer;
-
-
+module.exports = {
+    Stringer,
+    Mailer
+}
