@@ -16,14 +16,20 @@
 > `const Stringer = require('if-mailers').Stringer`;
 
 ### ES6
-> `import IFMailers from 'if-mailers'`;
-> `const Mailer = IFMailers.Mailer`;     
+```javascript 
+import IFMailers from 'if-mailers';
+const Mailer = IFMailers.Mailer;
+```     
 
 
 #### or
 
-> `import IFMailers from 'if-mailers'`;
-> `const Stringer = IFMailers.Stringer`;     
+ ```javascript 
+import IFMailers from 'if-mailers'`;
+const Stringer = IFMailers.Stringer;
+ ```     
+
+____
 
 ## Mailer class
     It gives the options of custimizing certain variables apart from the ones passed as parameter (recommended)
