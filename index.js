@@ -36,6 +36,8 @@ class Mailer {
                 },
                 ...options
             }
+
+        console.log(this.options);
     }
 
     /**
@@ -60,13 +62,44 @@ class Mailer {
     }
 
     replaceBaseVariables(html) {
+        console.log(this.options);
+        html = html.replace(/<%app%>/, this.options.appName);
+        html = html.replace(/<%address%>/, this.options.address);
 
+        html = this.setFooterLinks(html);
+
+
+
+        return html;
+    }
+
+    setFooterLinks(html) {
+        return Stringer.multiReplacement(html, {
+            'link-facebook': this.options.social.facebook,
+            'link-twitter': this.options.social.twitter,
+            'link-insta': this.options.social.insta,
+            'link-youtube': this.options.social.youtube,
+            'link-telegram': TEL,
+            'link-reddit': REDDIT
+        })
+    }
+
+    getInvitation(inviter, signupLink) {
+        let html = this._readEmailFile('invite');
+
+        html = Stringer.multiReplacement(html, { inviter, appLink: this.options.appLink, link: signupLink });
+
+        html = this.replaceBaseVariables(html);
+
+        return html;
     }
 
     getEmailConfirmation(firstName) {
         let html = this._readEmailFile('email-confirmation');
 
         html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+
+        html = this.replaceBaseVariables(html);
 
         return html;
     }
@@ -75,6 +108,7 @@ class Mailer {
         let html = this._readEmailFile('welcome');
 
         html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+        html = this.replaceBaseVariables(html);
 
         return html;
     }
@@ -83,7 +117,7 @@ class Mailer {
         let html = this._readEmailFile('forgot-password');
 
         html = Stringer.multiReplacement(html, { firstName, code });
-        html = Stringer.replaceBaseVariables(html);
+        html = this.replaceBaseVariables(html);
 
         return html;
     }

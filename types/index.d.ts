@@ -3,6 +3,7 @@
 declare type MailOptions = {
     appName?: string,
     address?: string,
+    appLink?: string,
     social?: {
         facebook?: string,
         twitter?: string,
@@ -13,6 +14,8 @@ declare type MailOptions = {
 
 declare class Mailer {
     options: MailOptions;
+
+    constructor(options: MailOptions);
 
     /**
      * Sets 
@@ -26,6 +29,14 @@ declare class Mailer {
      * @param link link to confirm
      */
     getEmailConfirmation(firstName: string): string;
+
+    /**
+     * Returns html for an invitation email
+     * 
+     * @param inviter user who has invited the current user
+     * @param signupLink link for users to signup
+     */
+    getInvitation(inviter: string, signupLink: string): string;
 
     /**
      * Welcome mail string

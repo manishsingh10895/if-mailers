@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invitation</title>
+
+    <style>
+p,
+h1,
+h2,
+h3,
+div {
+  font-family: Roboto, RobotoDraft, Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.mail-context-image img {
+  height: 70px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.if-highlight-text {
+  font-size: 28px;
+  color: #5ac8fa;
+}
+
+.if-btn {
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #5ac8fa;
+  color: #fff;
+}
+
+.if-link {
+  color: #5ac8fa;
+}
+
+.huge-gap {
+  padding: 32px 0;
+}
+
+.footer-container {
+  margin-top: 64px;
+  background-color: #f4f7fb;
+}
+
+.footer-inner {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  height: 38px;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons{
+  width: 100%;
+  float: right;
+}
+
+.left-side{
+  float: left;
+  width:100%;
+}
+
+</style>
+</head>
+
+<body>
+    <div style="padding-top: 50px" class="container">
+        <div class="mail-context-image">
+            <img height="70px" width="70px" alt="Coin" title="Coin"
+                src="https://betafunds.s3.ap-south-1.amazonaws.com/cryptoicons-128-color/<%symbollc%>.png">
+        </div>
+
+        <h1>Invitation to <%app%></h1>
+
+        <p>
+            <h3>Hello user</h3>
+        </p>
+        <p>
+            You have been invited to our platform <a class="if-link" href="<%appLink%>"><%app%></a>, by
+            <strong><%inviter%></strong>
+        </p>
+
+        <p>
+            If you wish to join us, please click the button below
+        </p>
+
+        <div class="huge-gap">
+            <a class="if-btn" href="<%link%>">Register for <%app%></a>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+    <div class="footer-inner">
+        <div class="logo-row">
+            <div class="left-side">
+                <img alt="Logo" title="Logo" style="display: block;" class="footer-logo"
+                    src="https://betafunds.s3.ap-south-1.amazonaws.com/logo-fulltext-transparent.png">
+                <p style="max-width:250px;font-size: 13px; color: #5F748B;">
+                    © 2020 <%address%>
+                </p>
+            </div>
+            <div class="huge-gap"></div>
+            <div class="social-icons">
+                <p style="font-size: 13px; color: #5F748B;margin-top: 0">Follow us on </p>
+                <a href="<%link-facebook%>"><img style="width:20px"
+                        src="https://betafunds.s3.ap-south-1.amazonaws.com/Facebook.png"></a>
+                <a href="<%link-twitter%>"><img style="width:20px"
+                        src="https://betafunds.s3.ap-south-1.amazonaws.com/Twitter.png"></a>
+                <a href="<%link-telegram%>"><img style="width:20px"
+                        src="https://betafunds.s3.ap-south-1.amazonaws.com/Telegram.png"></a>
+                <a href="<%link-reddit%>"><img style="width:20px"
+                        src="https://betafunds.s3.ap-south-1.amazonaws.com/Reddit.png"></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+</body>
+
+</html>
