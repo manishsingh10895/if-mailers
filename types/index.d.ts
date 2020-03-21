@@ -26,9 +26,9 @@ declare class Mailer {
     /**
      * 
      * @param firstName user name
-     * @param link link to confirm
+     * @param link link to verify
      */
-    getEmailConfirmation(firstName: string): string;
+    getEmailConfirmation(firstName: string, link: string): string;
 
     /**
      * Returns html for an invitation email

@@ -94,10 +94,10 @@ class Mailer {
         return html;
     }
 
-    getEmailConfirmation(firstName) {
+    getEmailConfirmation(firstName, link) {
         let html = this._readEmailFile('email-confirmation');
 
-        html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+        html = Stringer.multiReplacement(html, { firstName, link });
 
         html = this.replaceBaseVariables(html);
 
