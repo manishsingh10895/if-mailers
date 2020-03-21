@@ -15,7 +15,7 @@ declare type MailOptions = {
 declare class Mailer {
     options: MailOptions;
 
-    constructor(options: MailOptions);
+    constructor(options?: MailOptions);
 
     /**
      * Sets 
