@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Withdrawal Processed</title>
+    <title>Package Buy</title>
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 
     <style>
@@ -88,21 +88,22 @@ body {
 <body>
     <div style="padding-top: 50px" class="container">
         <div class="mail-context-image">
-            <img height="70px" width="70px" alt="Coin" title="Coin"
-                src="https://betafunds.s3.ap-south-1.amazonaws.com/cryptoicons-128-color/<%symbollc%>.png">
+            <img
+                src="https://betafunds.s3.ap-south-1.amazonaws.com/mail-icon-default.png">
         </div>
 
-        <h1><%fullName%> sent successfully</h1>
-        <h4>- <%amount%> <%symbol%></h4>
+        <h1>Verification OTP </h1>
 
         <p>
             <h3>Hello <%firstName%></h3>
         </p>
         <p>
-            Congratulations! You have successfully sent <%fullName%> to an external addresss. You can view the
-            transaction
-            details in your <%app%> account.
+            your verification code is <b><%code%></b>.
         </p>
+
+        <div class="huge-gap">
+            <a class="if-btn" href="<%link%>">Go to <%app%></a>
+        </div>
     </div>
 
     <footer class="footer-container">

@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-const APP = 'BetaFunds';
-const ADDRESS = 'Betafunds,\n Cayman Islands';
+const APP = 'Bitsef';
+const ADDRESS = 'Bitsef,\n Lõõtsa tn 5, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415';
 
 const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
 const TWITTER = 'https://twitter.com/BetaFunds';
@@ -9,24 +9,26 @@ const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
 const INSTA = 'https://www.instagram.com/betafunds_/';
 const TEL = '';
 const REDDIT = '';
-const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/mail-icon-default.png';
-const APP_LINK = 'https://betafunds.com';
+const LOGO_URL = 'https://bitsef.com/assets/images/bitserf.svg';
+const APP_LINK = 'https://bitsef.com';
 
 
 class Mailer {
-    options = {
-        appName: APP,
-        address: ADDRESS,
-        social: {
-            facebook: FACEBOOK,
-            twitter: TWITTER,
-            youtube: YT,
-            insta: INSTA,
-        },
-        appLink: APP_LINK
-    }
+
 
     constructor(options) {
+        this.options = {
+            appName: APP,
+            address: ADDRESS,
+            social: {
+                facebook: FACEBOOK,
+                twitter: TWITTER,
+                youtube: YT,
+                insta: INSTA,
+            },
+            appLink: APP_LINK
+        }
+
         if (options)
             this.options = {
                 ...this.options,
@@ -217,6 +219,16 @@ class Stringer {
         let html = fs.readFileSync(__dirname + '/lib' + '/package-buy.html').toString('utf-8');
 
         html = Stringer.multiReplacement(html, { firstName, packageName, amount, link });
+
+        html = Stringer.replaceBaseVariables(html);
+
+        return html;
+    }
+
+    static getVerificationOTP( firstName , code ){
+        let html = fs.readFileSync(__dirname + '/lib' + '/verifyotp.html').toString('utf-8');
+
+        html = Stringer.multiReplacement(html, { firstName, code });
 
         html = Stringer.replaceBaseVariables(html);
 
