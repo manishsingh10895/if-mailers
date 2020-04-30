@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const APP = 'Bitsef';
-const ADDRESS = 'Bitsef,\n Lõõtsa tn 5, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415';
+const ADDRESS = 'Bitsef Tallinn, Estonia';
 
 const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
 const TWITTER = 'https://twitter.com/BetaFunds';
