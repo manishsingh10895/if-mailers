@@ -53,6 +53,16 @@ declare class Mailer {
      * @param code code for the  user to reset password screen
      */
     getForgotPassword(firstName: string, code: string): string;
+
+
+    /**
+     * 
+     * @param firstName firstName of the user
+     * @param email email of the new user
+     * @param password password of the new user
+     * @param link link to new login
+     */
+    getAccountCreated(firstName: string, email: string, password: string, link: string): string;
 }
 
 declare class Stringer {

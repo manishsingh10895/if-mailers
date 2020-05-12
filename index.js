@@ -63,8 +63,8 @@ class Mailer {
 
     replaceBaseVariables(html) {
         console.log(this.options);
-        html = html.replace(/<%app%>/, this.options.appName);
-        html = html.replace(/<%address%>/, this.options.address);
+        html = html.replace(/<%app%>/g, this.options.appName);
+        html = html.replace(/<%address%>/g, this.options.address);
 
         html = this.setFooterLinks(html);
 
@@ -121,12 +121,22 @@ class Mailer {
 
         return html;
     }
+
+    getAccountCreated(firstName, email, password, link) {
+        let html = this._readEmailFile('account-created');
+
+        html = Stringer.multiReplacement(html, { firstName, email, password, link: link });
+
+        html = this.replaceBaseVariables(html);
+
+        return html;
+    }
 }
 
 class Stringer {
     static replaceBaseVariables(html) {
-        html = html.replace(/<%app%>/, APP);
-        html = html.replace(/<%address%>/, ADDRESS);
+        html = html.replace(/<%app%>/g, APP);
+        html = html.replace(/<%address%>/g, ADDRESS);
 
         html = this.setFooterLinks(html);
 
