@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Confirmation</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+
+    <!-- inject:css -->
+</head>
+
+<body>
+    <div style="padding-top: 50px" class="container">
+        <div class="mail-context-image">
+            <img src="https://i.ibb.co/fv5X8cD/bitseflogo.png">
+        </div>
+
+        <h1>Verify your IP Address</h1>
+
+        <p>
+            <h3>Hello <%firstName%></h3>
+        </p>
+        <p>
+            Please confirm your IP Address by clicking on Confirm IP Address or copying this link in your browser.
+            <br>
+            <b>IP: <%ip%> </b>
+            <b>Location: <%location%> </b> 
+        </p>
+
+        <div class="huge-gap">
+            <a class="if-btn" href="<%link%>">Confirm IP Address</a>
+        </div>
+
+        <p>
+            If the button doesn’t work, you can copy and paste the link below into your browser.This link will only be valid for the next 10 minutes.
+        </p>
+
+        <a class="if-link" href="<%link%>"><%link%></a>
+    </div>
+
+    <!-- inject:footer -->
+</body>
+
+</html>

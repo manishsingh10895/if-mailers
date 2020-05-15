@@ -1,4 +1,4 @@
-HERER <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -96,24 +96,24 @@ body {
         <h1>Verify your IP Address</h1>
 
         <p>
-            <h3>Hello Rahul dwiveid</h3>
+            <h3>Hello <%firstName%></h3>
         </p>
         <p>
             Please confirm your IP Address by clicking on Confirm IP Address or copying this link in your browser.
             <br>
             <b>IP: <%ip%> </b>
-            <b>Location: India </b> 
+            <b>Location: <%location%> </b> 
         </p>
 
         <div class="huge-gap">
-            <a class="if-btn" href="https://bitcoin.com">Confirm IP Address</a>
+            <a class="if-btn" href="<%link%>">Confirm IP Address</a>
         </div>
 
         <p>
             If the button doesn’t work, you can copy and paste the link below into your browser.This link will only be valid for the next 10 minutes.
         </p>
 
-        <a class="if-link" href="https://bitcoin.com">https://bitcoin.com</a>
+        <a class="if-link" href="<%link%>"><%link%></a>
     </div>
 
     <footer class="footer-container">
@@ -123,19 +123,19 @@ body {
                 <img alt="Logo" title="Logo" style="display: block;" class="footer-logo"
                     src="https://i.ibb.co/QdtpRz0/bitseflogo.png">
                 <p style="max-width:250px;font-size: 13px; color: #5F748B;">
-                    © 2020 Bitsef Tallinn, Estonia
+                    © 2020 <%address%>
                 </p>
             </div>
             <div class="huge-gap"></div>
             <div class="social-icons">
                 <p style="font-size: 13px; color: #5F748B;margin-top: 0">Follow us on </p>
-                <a href="https://www.facebook.com/BetaFunds-107325990771705/"><img style="width:20px"
+                <a href="<%link-facebook%>"><img style="width:20px"
                         src="https://betafunds.s3.ap-south-1.amazonaws.com/Facebook.png"></a>
-                <a href="https://twitter.com/BetaFunds"><img style="width:20px"
+                <a href="<%link-twitter%>"><img style="width:20px"
                         src="https://betafunds.s3.ap-south-1.amazonaws.com/Twitter.png"></a>
-                <a href=""><img style="width:20px"
+                <a href="<%link-telegram%>"><img style="width:20px"
                         src="https://betafunds.s3.ap-south-1.amazonaws.com/Telegram.png"></a>
-                <a href=""><img style="width:20px"
+                <a href="<%link-reddit%>"><img style="width:20px"
                         src="https://betafunds.s3.ap-south-1.amazonaws.com/Reddit.png"></a>
             </div>
         </div>

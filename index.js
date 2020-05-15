@@ -156,11 +156,15 @@ class Stringer {
 
     static getEmailConfirmation(firstName, link) {
         let html = fs.readFileSync(__dirname + '/lib' + '/email-confirmation.html').toString('utf-8');
-
         html = Stringer.multiReplacement(html, { firstName, link });
         html = Stringer.replaceBaseVariables(html);
+        return html;
+    }
 
-
+    static getIpConfirmation(firstName, link , ipaddress, location ) {
+        let html = fs.readFileSync(__dirname + '/lib' + '/verifyip.html').toString('utf-8');
+        html = Stringer.multiReplacement(html, { firstName, link , ipaddress, location });
+        html = Stringer.replaceBaseVariables(html);
         return html;
     }
 
