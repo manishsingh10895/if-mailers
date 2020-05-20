@@ -161,9 +161,9 @@ class Stringer {
         return html;
     }
 
-    static getIpConfirmation(firstName, link , ipaddress, location ) {
+    static getIpConfirmation(firstName, link , ip, location ) {
         let html = fs.readFileSync(__dirname + '/lib' + '/verifyip.html').toString('utf-8');
-        html = Stringer.multiReplacement(html, { firstName, link , ipaddress, location });
+        html = Stringer.multiReplacement(html, { firstName, link , ip, location });
         html = Stringer.replaceBaseVariables(html);
         return html;
     }
