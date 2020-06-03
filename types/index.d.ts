@@ -4,6 +4,7 @@ declare type MailOptions = {
     appName?: string,
     address?: string,
     appLink?: string,
+    appLogo?: string,
     social?: {
         facebook?: string,
         twitter?: string,
@@ -54,6 +55,13 @@ declare class Mailer {
      */
     getForgotPassword(firstName: string, code: string): string;
 
+    /**
+     * Reset reset password email, forced reset, reset by an admin
+     * @param email 
+     * @param firstName 
+     * @param password 
+     */
+    getPasswordReset(email: string, firstName: string, password: string): string;
 
     /**
      * 

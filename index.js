@@ -9,7 +9,7 @@ const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
 const INSTA = 'https://www.instagram.com/betafunds_/';
 const TEL = '';
 const REDDIT = '';
-const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/mail-icon-default.png';
+const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/logo-fulltext-transparent.png';
 const APP_LINK = 'https://betafunds.com';
 
 
@@ -17,6 +17,7 @@ class Mailer {
     options = {
         appName: APP,
         address: ADDRESS,
+        appLogo: LOGO_URL,
         social: {
             facebook: FACEBOOK,
             twitter: TWITTER,
@@ -65,10 +66,9 @@ class Mailer {
         console.log(this.options);
         html = html.replace(/<%app%>/g, this.options.appName);
         html = html.replace(/<%address%>/g, this.options.address);
+        html = html.replace(/<%appLogo%>/g, this.options.appLogo);
 
         html = this.setFooterLinks(html);
-
-
 
         return html;
     }
@@ -108,6 +108,15 @@ class Mailer {
         let html = this._readEmailFile('welcome');
 
         html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink });
+        html = this.replaceBaseVariables(html);
+
+        return html;
+    }
+
+    getPasswordReset(email, firstName, password) {
+        let html = this._readEmailFile('password-reset');
+
+        html = Stringer.multiReplacement(html, { firstName, link: this.options.appLink, email, password });
         html = this.replaceBaseVariables(html);
 
         return html;
