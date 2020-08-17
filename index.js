@@ -122,10 +122,10 @@ class Mailer {
         return html;
     }
 
-    getForgotPassword(firstName, code) {
+    getForgotPassword(firstName, link) {
         let html = this._readEmailFile('forgot-password');
 
-        html = Stringer.multiReplacement(html, { firstName, code });
+        html = Stringer.multiReplacement(html, { firstName, link });
         html = this.replaceBaseVariables(html);
 
         return html;

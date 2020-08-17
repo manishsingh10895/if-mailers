@@ -53,7 +53,7 @@ declare class Mailer {
      * @param firstName user name
      * @param code code for the  user to reset password screen
      */
-    getForgotPassword(firstName: string, code: string): string;
+    getForgotPassword(firstName: string, link: string): string;
 
     /**
      * Reset reset password email, forced reset, reset by an admin
