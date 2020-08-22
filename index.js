@@ -37,8 +37,6 @@ class Mailer {
                 },
                 ...options
             }
-
-        console.log(this.options);
     }
 
     /**
@@ -63,7 +61,6 @@ class Mailer {
     }
 
     replaceBaseVariables(html) {
-        console.log(this.options);
         html = html.replace(/<%app%>/g, this.options.appName);
         html = html.replace(/<%address%>/g, this.options.address);
         html = html.replace(/<%appLogo%>/g, this.options.appLogo);
