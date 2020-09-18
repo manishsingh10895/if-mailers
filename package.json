@@ -1,6 +1,6 @@
 {
   "name": "if-mailers",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "reusable mailers",
   "main": "index.js",
   "scripts": {

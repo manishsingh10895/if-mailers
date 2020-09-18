@@ -13,6 +13,17 @@ const ADDRESS = 'Betafunds,\n Cayman Islands';
 // const APP_LINK = 'https://betafunds.com';
 
 
+
+const FACEBOOK = '';
+const TWITTER = '';
+const YT = '';
+const INSTA = '';
+const TEL = '';
+const REDDIT = '';
+const LOGO_URL = '';
+const APP_LINK = '';
+
+
 class Mailer {
     options = {
         appName: "",
