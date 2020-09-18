@@ -64,6 +64,13 @@ declare class Mailer {
     getPasswordReset(email: string, firstName: string, password: string): string;
 
     /**
+     * Export leads email file url
+     * @param fullName 
+     * @param link 
+     */
+    getLeadExports(fullName: string, link: string);
+
+    /**
      * 
      * @param firstName firstName of the user
      * @param email email of the new user

@@ -101,6 +101,16 @@ class Mailer {
         return html;
     }
 
+    getLeadExports(fullName, link) {
+        let html = this._readEmailFile('export-success');
+
+        html = Stringer.multiReplacement(html, { fullName, link });
+
+        html = this.replaceBaseVariables(html);
+
+        return html;
+    }
+
     getWelcome(firstName) {
         let html = this._readEmailFile('welcome');
 
