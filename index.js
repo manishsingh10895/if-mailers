@@ -45,9 +45,7 @@ class Mailer {
      */
     setOptions(options) {
         this.options = {
-            ...this.options,
             social: {
-                ...this.options.social,
                 ...options.social
             },
             ...options
