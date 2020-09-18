@@ -3,36 +3,34 @@ const fs = require('fs')
 const APP = 'BetaFunds';
 const ADDRESS = 'Betafunds,\n Cayman Islands';
 
-const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
-const TWITTER = 'https://twitter.com/BetaFunds';
-const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
-const INSTA = 'https://www.instagram.com/betafunds_/';
-const TEL = '';
-const REDDIT = '';
-const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/logo-fulltext-transparent.png';
-const APP_LINK = 'https://betafunds.com';
+// const FACEBOOK = 'https://www.facebook.com/BetaFunds-107325990771705/';
+// const TWITTER = 'https://twitter.com/BetaFunds';
+// const YT = 'https://www.youtube.com/channel/UCvKIoglitJmvVGHkn94b-UQ/';
+// const INSTA = 'https://www.instagram.com/betafunds_/';
+// const TEL = '';
+// const REDDIT = '';
+// const LOGO_URL = 'https://betafunds.s3.ap-south-1.amazonaws.com/logo-fulltext-transparent.png';
+// const APP_LINK = 'https://betafunds.com';
 
 
 class Mailer {
     options = {
-        appName: APP,
-        address: ADDRESS,
-        appLogo: LOGO_URL,
+        appName: "",
+        address: "",
+        appLogo: "",
         social: {
-            facebook: FACEBOOK,
-            twitter: TWITTER,
-            youtube: YT,
-            insta: INSTA,
+            facebook: "",
+            twitter: "",
+            youtube: "",
+            insta: "",
         },
-        appLink: APP_LINK
+        appLink: ""
     }
 
     constructor(options) {
         if (options)
             this.options = {
-                ...this.options,
                 social: {
-                    ...this.options.social,
                     ...options.social
                 },
                 ...options
