@@ -98,6 +98,16 @@ class Mailer {
         return html;
     }
 
+    getVerificationCode(code) {
+        let html = this._readEmailFile('verification-code');
+
+        html = Stringer.multiReplacement(html, { code });
+
+        html = this.replaceBaseVariables(html);
+
+        return html;
+    }
+
     getEmailConfirmation(firstName, link) {
         let html = this._readEmailFile('email-confirmation');
 

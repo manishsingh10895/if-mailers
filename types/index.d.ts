@@ -78,6 +78,12 @@ declare class Mailer {
      * @param link link to new login
      */
     getAccountCreated(firstName: string, email: string, password: string, link: string): string;
+
+    /**
+     * Email sent for verification code 
+     * @param code verification code
+     */
+    getVerificationCode(code: string): string;
 }
 
 declare class Stringer {
